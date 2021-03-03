@@ -35,11 +35,6 @@ class DevopsCli < Formula
         sha256 "0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"
     end
     
-    resource "devops-cli" do
-        url "https://files.pythonhosted.org/packages/ac/42/3dff58f03d62e0c4dd689998b64729f91323829499261c9da93de15afb92/devops-cli-0.1.0.tar.gz"
-        sha256 "3d94df8992aec89e4d1a6ae126036e09def18fc297ba292e834bb67d2011735b"
-    end
-    
     resource "google-auth" do
         url "https://files.pythonhosted.org/packages/35/1a/680f98973d8e19f9802f70ac9baf0d5538af727da287463ac4fa608e1834/google-auth-1.27.0.tar.gz"
         sha256 "da5218cbf33b8461d7661d6b4ad91c12c0107e2767904d5e3ae6408031d5463e"
@@ -127,5 +122,6 @@ class DevopsCli < Formula
 
     def install
         virtualenv_install_with_resources
+        bin.install_symlink libexec/"bin/devops-cli"
     end      
 end
