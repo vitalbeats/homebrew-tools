@@ -1,4 +1,4 @@
-class DevOpsCLI < Formula
+class DevopsCli < Formula
     include Language::Python::Virtualenv
   
     desc "A CLI tool that provides useful functions to operate on the Vital Beats cluster."
