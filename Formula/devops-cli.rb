@@ -126,13 +126,6 @@ class DevOpsCLI < Formula
     end    
 
     def install
-        ENV.prepend_path "PATH", Formula["python@3.7"].opt_libexec/"bin"
-    
-        venv = virtualenv_create(libexec, "python3")
-        # Install all of the resources declared on the formula into the virtualenv.
-        resources.each do |r|
-          venv.pip_install r
-        end
-        venv.pip_install_and_link buildpath
-    end
+        virtualenv_install_with_resources
+    end      
 end
